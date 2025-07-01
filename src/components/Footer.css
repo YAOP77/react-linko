@@ -1,0 +1,162 @@
+.footer {
+    background-color: #111010;
+    color: white;
+    padding: 30px 20px;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #525861;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 25px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 15px;
+}
+
+.footer-logo-description h1 {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.footer-logo-description p {
+    font-size: 0.8em;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.footer-quick-links h2,
+.footer-contact h2 {
+    font-size: 1.1em;
+    color: #facc15; /* Jaune */
+    margin-bottom: 15px;
+}
+
+.footer-quick-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-quick-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-quick-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.footer-quick-links ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
+}
+
+.footer-quick-links ul li a:hover::after {
+    width: 100%;
+}
+
+.footer-social-icons {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social-icons a {
+    color: white;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    color: #007bff; /* Bleu au survol */
+}
+
+.footer-contact-form .form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-contact-form input[type="text"],
+.footer-contact-form input[type="email"],
+.footer-contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    background-color: #1a1a1a; /* Couleur de fond des inputs */
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 0.8em;
+}
+
+.footer-contact-form textarea {
+    resize: vertical;
+    min-height: 70px;
+    margin-bottom: 12px;
+}
+
+.footer-contact-form button {
+    width: 100%;
+    padding: 8px 20px;
+    background-color: #007bff; /* Bleu du bouton */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-contact-form button:hover {
+    background-color: #0056b3; /* Bleu plus foncé au survol */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 12px;
+    border-top: 1px solid #333;
+    font-size: 0.75em;
+    color: #999999;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        min-width: 100%;
+    }
+
+    .footer-quick-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-social-icons {
+        justify-content: center;
+    }
+} 

@@ -1,0 +1,202 @@
+/* Racine */
+.about-root {
+  background-color: #111010;
+  min-height: 100vh;
+  color: white;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Hero Section */
+.about-hero {
+  padding: 60px 20px 30px 20px;
+  text-align: center;
+}
+.about-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.about-hero h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.about-linko {
+  color: #2563eb;
+}
+.about-hero p {
+  font-size: 1.1em;
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+/* Project Section */
+.about-project {
+  padding: 40px 20px;
+  background-color: #171717;
+}
+.about-project-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.about-project-content h2 {
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.about-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.about-card {
+  background-color: #23272f;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+.about-card h3, .about-card h4 {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  color: #2563eb;
+}
+.about-card p, .about-card ul {
+  color: #9ca3af;
+  line-height: 1.5;
+  font-size: 1em;
+}
+
+/* Technologies Section */
+.about-tech {
+  padding: 60px 20px;
+}
+.about-tech-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.about-tech-content h2 {
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.about-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.about-card.tech {
+  text-align: center;
+}
+.about-icon {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+.about-icon.react { color: #61dafb; }
+.about-icon.node { color: #68a063; }
+.about-icon.express { color: #000; }
+.about-icon.mongo { color: #4db33d; }
+.about-icon.socket { color: #010101; }
+.about-icon.js { color: #f7df1e; }
+
+/* Developer Section */
+.about-dev {
+  padding: 60px 20px;
+  background-color: #171717;
+}
+.about-dev-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.about-dev-content h2 {
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.about-dev-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.about-dev-profile {
+  text-align: center;
+  min-width: 220px;
+  flex: 1 1 220px;
+}
+.about-dev-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+}
+.about-dev-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-dev-profile h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.about-dev-profile p {
+  color: #9ca3af;
+  margin-bottom: 20px;
+}
+.about-dev-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  flex: 2 1 400px;
+}
+.about-dev-niveau {
+  color: #888;
+  font-size: 1em;
+  margin-top: 18px;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .about-project-content, .about-tech-content, .about-dev-content {
+    max-width: 100%;
+    padding: 0;
+  }
+  .about-dev-flex {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .about-dev-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .about-hero, .about-project, .about-tech, .about-dev {
+    padding: 24px 6px;
+  }
+  .about-hero h1, .about-project-content h2, .about-tech-content h2, .about-dev-content h2 {
+    font-size: 1.2em;
+  }
+  .about-project-grid, .about-tech-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .about-card {
+    padding: 12px;
+    font-size: 0.95em;
+  }
+  .about-dev-img {
+    width: 90px;
+    height: 90px;
+  }
+  .about-dev-profile h3 {
+    font-size: 1.1em;
+  }
+  .about-dev-profile p {
+    font-size: 0.9em;
+  }
+} 

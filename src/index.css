@@ -1,0 +1,699 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/* Reset CSS de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #1a1a1a; /* Couleur de fond corrigée */
+}
+
+/* Styles pour l'animation au défilement */
+.initial-scroll-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styles du formulaire d'inscription */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 160px);
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.register-form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.register-form h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #357abd;
+}
+
+.register-form a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+.register-form a:hover {
+    text-decoration: underline;
+}
+
+.register-form p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2a2a;
+    padding: 15px 30px;
+    border-radius: 10px;
+    width: 90%; /* Définit la largeur à 90% de la vue */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.navbar-brand a {
+    color: #007bff; /* Blue color for ChatRoom text */
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-menu a {
+    color: #f0f0f0; /* Light text color for menu items */
+    text-decoration: none;
+    font-size: 16px; /* Decreased font size */
+    padding: 3px 0; /* Decreased padding */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+    color: #007bff; /* Blue color on hover */
+}
+
+.navbar-menu a.active-nav-link {
+    color: #007bff; /* Blue color for active link */
+}
+
+.navbar-menu a.active-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #007bff; /* Blue underline for active link */
+    border-radius: 2px;
+}
+
+/* Ajout d'un conteneur pour le contenu principal */
+.main-content {
+    padding-top: 80px; /* Espace pour la navbar fixe */
+}
+
+.section-1 {
+    background-color: #111010;
+    width: 100%;
+}
+
+.section-1 .container-sect-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    border: 4px solid red;
+}
+
+.section-1 .container-sect-1 button {
+    width: 140px;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: #007bff;
+}
+
+.section-1 .container-sect-1 button:hover {
+    background-color: #4a90e2;
+}
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-1 h1 {
+    font-size: 2.6em;
+    text-align: center;
+    color: #fff;
+    animation: slideUpFade 1s ease-out forwards;
+    opacity: 0; /* Start invisible */
+}
+
+/* Styles pour la Section 2 */
+.section-2 {
+    text-align: center;
+    background-color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+}
+
+.knowledge-title {
+    color: #facc15;
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+.knowledge-description {
+    color: #9ca3af;
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+/* Classe qui sera ajoutée par l'Intersection Observer */
+.animate-on-scroll .knowledge-title {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.animate-on-scroll .knowledge-description {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+}
+
+.avatar-container {
+    position: relative;
+    width: 100%;
+    bottom: 80px;
+    max-width: 900px;
+    height: 300px;
+    margin: 0 auto 80px auto;
+}
+
+@keyframes orbitCircle {
+    0% {
+        transform: rotate(0deg) translateX(20px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(20px) rotate(-360deg);
+    }
+}
+
+.avatar {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid #3b82f6;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    animation: orbitCircle 20s linear infinite;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.7s ease-in-out;
+}
+
+/* Add different animation delays and speeds for each avatar */
+.avatar-1 {
+    animation-duration: 20s;
+    animation-delay: 0s;
+}
+
+.avatar-2 {
+    animation-duration: 25s;
+    animation-delay: -5s;
+}
+
+.avatar-3 {
+    animation-duration: 30s;
+    animation-delay: -10s;
+}
+
+.avatar-4 {
+    animation-duration: 22s;
+    animation-delay: -7s;
+}
+
+.avatar-5 {
+    animation-duration: 27s;
+    animation-delay: -12s;
+}
+
+/* Avatar positions - adjusting the center points for the orbit */
+.avatar-1 {
+    top: 20%;
+    left: 30%;
+}
+
+.avatar-2 {
+    top: 40%;
+    left: 20%;
+}
+
+.avatar-3 {
+    top: 60%;
+    left: 40%;
+}
+
+.avatar-4 {
+    top: 25%;
+    right: 25%;
+}
+
+.avatar-5 {
+    top: 45%;
+    right: 20%;
+}
+
+/* Button styles for Section 2 */
+.button-group {
+    position: relative;
+    bottom: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.button-container {
+    display: flex;
+    border-radius: 9999px;
+    border: 1px solid #2a2a2a;
+    background-color: #3b82f6;
+    padding: 5px;
+}
+
+.button-group button {
+    font-size: 1rem;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.register-button {
+    background-color: #2a2a2a;
+    color: white;
+}
+
+.login-button {
+    background-color: #3b82f6;
+    color: white;
+    margin-left: 10px;
+}
+
+.login-button:hover {
+    background-color: #2563eb;
+}
+
+/* Styles pour la Section 3 */
+.section-3 {
+    /* padding: 100px 20px; */
+    background-color: #111010;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.section-3-title {
+    color: #facc15;
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+.section-3-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permet aux éléments de s'enrouler sur les petits écrans */
+    gap: 50px;
+}
+
+.phone-image-container {
+    position: relative;
+    width: 350px; /* Augmente encore la largeur du téléphone */
+    height: 600px; /* Augmente encore la hauteur du téléphone */
+    display: flex;
+    position: relative;
+    bottom: 35px;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+}
+
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+    padding-left: 50px;
+    z-index: 0; /* Assure un contexte d'empilement clair */
+}
+
+.steps-container::before {
+    content: '';
+    position: absolute;
+    left: 70px;
+    top: 20px;
+    bottom: 40px;
+    width: 3px;
+    background-color: #007bff;
+    z-index: -1;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 1s ease-out;
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 1s ease-out;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    z-index: 10; /* Assure que le numéro est au-dessus */
+    position: relative;
+}
+
+.step-text h3 {
+    color: #007bff;
+    font-size: 1.4em; /* Agrandit le titre */
+    margin-bottom: 10px; /* Ajuste la marge */
+}
+
+.step-text p {
+    color: #f0f0f0;
+    font-size: 1em;
+}
+
+/* Animations pour la section 1 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0; /* Assure que l'élément est caché avant l'animation */
+    transform: translateY(20px); /* Commence légèrement en dessous */
+    animation: fadeInUp 0.8s ease-out forwards; /* Applique l'animation */
+}
+
+.delay-1 {
+    animation-delay: 0.3s; /* Délai pour le bouton */
+}
+
+@media (max-width: 768px) {
+    .section-3-content {
+        flex-direction: column;
+    }
+
+    .steps-container {
+        padding-left: 0;
+        align-items: center;
+    }
+
+    .steps-container::before {
+        left: 20px;
+    }
+
+    .step-item {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Keyframes pour l'animation au scroll de la section 2 */
+@keyframes fadeInUpSection2 {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-animated-section2 {
+    opacity: 0; /* Assure que l'élément est caché avant l'animation */
+    transform: translateY(20px); /* Commence légèrement en dessous */
+    animation: fadeInUpSection2 1s ease-out forwards;
+}
+
+.error-msg {
+    color: #facc15;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: 0.5s ease;
+}
+
+.success-msg {
+    color: green;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: 0.5s ease;
+}
+
+/* Styles de base pour les bulles de discussion */
+.conversation-bubble {
+    position: absolute;
+    background-color: #007bff;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 12px 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    opacity: 0;
+    transition: all 0.8s ease-out, 
+                background-color 0.5s ease-in-out,
+                border-color 0.5s ease-in-out,
+                box-shadow 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.conversation-bubble:hover {
+    background-color: #000000;
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.9);
+}
+
+/* Positions initiales et finales pour chaque bulle */
+.bubble-1 {
+    top: 10px;
+    left: -100px; /* Commence hors de l'écran à gauche */
+}
+
+.bubble-2 {
+    top: 90px;
+    right: -100px; /* Commence hors de l'écran à droite */
+}
+
+.bubble-3 {
+    top: 170px;
+    left: -100px; /* Commence hors de l'écran à gauche */
+}
+
+.bubble-4 {
+    top: 250px;
+    right: -100px; /* Commence hors de l'écran à droite */
+}
+
+/* Animation au scroll */
+.animate-on-scroll .bubble-1 {
+    opacity: 1;
+    left: 10%;
+    transition-delay: 0.2s;
+}
+
+.animate-on-scroll .bubble-2 {
+    opacity: 1;
+    right: 10%;
+    transition-delay: 0.4s;
+}
+
+.animate-on-scroll .bubble-3 {
+    opacity: 1;
+    left: 15%;
+    transition-delay: 0.6s;
+}
+
+.animate-on-scroll .bubble-4 {
+    opacity: 1;
+    right: 5%;
+    transition-delay: 0.8s;
+}
+
+/* Animation au scroll pour la section 3 */
+.animate-on-scroll .section-3-title {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.animate-on-scroll .steps-container {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+}
+
+.animate-on-scroll .steps-container::before {
+    transform: scaleY(1);
+    transition-delay: 2.2s; /* La ligne apparaît APRES que toutes les étapes soient en place */
+}
+
+.animate-on-scroll .step-item:nth-child(1) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.6s;
+}
+
+.animate-on-scroll .step-item:nth-child(2) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.8s;
+}
+
+.animate-on-scroll .step-item:nth-child(3) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 1.0s;
+}

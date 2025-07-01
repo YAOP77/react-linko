@@ -1,0 +1,251 @@
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #1e1e1e;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: white;
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+/* Header */
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  background-color: #2a2b2f;
+  border: none;
+  border-bottom: 3px solid #444;
+  box-shadow: none;
+}
+
+.user-info {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-details .user-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.user-details .user-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  color: #b0b3b8;
+}
+
+.user-status .status-icon {
+  color: #28a745; /* green */
+  font-size: 0.6rem;
+}
+
+.action-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 1.2rem;
+  color: #b0b3b8;
+}
+
+.action-icons i {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.action-icons i:hover {
+  color: white;
+}
+
+/* Messages Area */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background-image: url('../assets/images/chat-background 1.png');
+  background-color: #18191a;
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.message-bubble {
+  max-width: 60%;
+  padding: 10px 15px;
+  border-radius: 18px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.message-bubble.from-me {
+  background-color: #0095FF;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.message-bubble.from-them {
+  background-color: #3a3b3c;
+  color: white;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+/* Footer */
+.chat-footer {
+  display: flex;
+  align-items: center;
+  padding: 4px 10px;
+  background-color: #23272a;
+  border: 1px solid #333;
+  border-radius: 22px;
+  margin: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  min-height: 38px;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 1.4rem;
+  color: #b0b3b8;
+  margin-right: 10px;
+}
+
+.footer-icons i {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-icons i:hover {
+  color: white;
+}
+
+.message-form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.message-input {
+  flex: 1;
+  background-color: #23272a;
+  border: none;
+  border-radius: 16px;
+  padding: 7px 10px;
+  color: white;
+  font-size: 0.95rem;
+  outline: none;
+  margin-right: 8px;
+  min-height: 28px;
+}
+
+.send-button {
+  background: #18191a;
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  margin-left: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.send-button:hover {
+  background: #0095FF;
+}
+
+.chat-exit-btn:hover {
+  color: #fff;
+  background: #444;
+}
+
+/* Emoji Picker Styles */
+.emoji-picker {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 70px;
+  background-color: #111010;
+  border: 1px solid #232323;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+  padding: 14px 10px 10px 10px;
+  width: 320px;
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 6px;
+}
+
+.emoji-picker button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emoji-picker button:hover {
+  background-color: #232323;
+  color: #ffd700;
+}
+
+.emoji-icon {
+  transition: transform 0.2s;
+}
+
+.emoji-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Scrollbar pour le sélecteur d'emojis */
+.emoji-picker::-webkit-scrollbar {
+  width: 6px;
+}
+
+.emoji-picker::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.emoji-picker::-webkit-scrollbar-thumb {
+  background: #232323;
+  border-radius: 3px;
+}
+
+.emoji-picker::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+} 

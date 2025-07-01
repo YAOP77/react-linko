@@ -1,0 +1,181 @@
+.room-join-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+}
+
+.room-join-modal {
+  background: #181818;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: slideIn 0.3s ease;
+}
+
+.room-join-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px 24px;
+  border-bottom: 1px solid #333;
+}
+
+.room-join-modal-header h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.room-join-modal-close {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.room-join-modal-close:hover {
+  background: #333;
+  color: #fff;
+}
+
+.room-join-modal-content {
+  padding: 24px;
+}
+
+.room-info {
+  margin-bottom: 24px;
+}
+
+.room-type-badge {
+  display: inline-block;
+  background: #0095FF;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.room-info h4 {
+  color: #fff;
+  margin: 0 0 8px 0;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.room-description {
+  color: #b0b3b8;
+  font-size: 0.95em;
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+}
+
+.room-stats {
+  display: flex;
+  gap: 16px;
+  color: #888;
+  font-size: 0.9em;
+}
+
+.room-stats span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.room-join-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.room-join-btn-cancel,
+.room-join-btn-confirm {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.room-join-btn-cancel {
+  background: #333;
+  color: #fff;
+}
+
+.room-join-btn-cancel:hover {
+  background: #444;
+}
+
+.room-join-btn-confirm {
+  background: #0095FF;
+  color: #fff;
+}
+
+.room-join-btn-confirm:hover {
+  background: #0077cc;
+}
+
+.room-join-modal-content input,
+.room-join-modal-content select,
+.room-join-modal-content textarea {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #23272f;
+  color: #fff;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.2s;
+  box-sizing: border-box;
+}
+.room-join-modal-content input:focus,
+.room-join-modal-content select:focus,
+.room-join-modal-content textarea:focus {
+  border: 1.5px solid #0095FF;
+  background: #23272f;
+}
+.room-join-modal-content textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-20px) scale(0.95);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+  }
+} 

@@ -1,0 +1,557 @@
+.admin-dashboard {
+  min-height: 100vh;
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 20px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+.admin-header {
+  background: #2a2a2a;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.admin-header h1 {
+  font-size: 2.2em;
+  color: #2563eb;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.admin-stats {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  background: #333;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 120px;
+  border: 1px solid #444;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9em;
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  background: #2a2a2a;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.tab-button {
+  background: #333;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  flex: 1;
+  max-width: 200px;
+}
+
+.tab-button:hover {
+  background: #444;
+}
+
+.tab-button.active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.admin-content {
+  background: #2a2a2a;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.admin-content h2 {
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+/* Section Utilisateurs */
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.user-card {
+  background: #333;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #444;
+  transition: all 0.3s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.user-card.banned {
+  border-color: #dc2626;
+  background: #2a1a1a;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  border: 2px solid #444;
+}
+
+.user-details h3 {
+  color: #ffffff;
+  margin: 0 0 5px 0;
+  font-size: 1.1em;
+}
+
+.user-details p {
+  color: #ccc;
+  margin: 0 0 5px 0;
+  font-size: 0.9em;
+}
+
+.status {
+  font-size: 0.8em;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.status.online {
+  background: #059669;
+  color: #ffffff;
+}
+
+.status.offline {
+  background: #6b7280;
+  color: #ffffff;
+}
+
+.user-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 80px;
+}
+
+.ban-btn {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.ban-btn:hover {
+  background: #b91c1c;
+}
+
+.ban-temp-btn {
+  background: #ea580c;
+  color: #ffffff;
+}
+
+.ban-temp-btn:hover {
+  background: #c2410c;
+}
+
+.unban-btn {
+  background: #059669;
+  color: #ffffff;
+}
+
+.unban-btn:hover {
+  background: #047857;
+}
+
+.delete-btn {
+  background: #6b7280;
+  color: #ffffff;
+}
+
+.delete-btn:hover {
+  background: #4b5563;
+}
+
+.edit-btn {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.edit-btn:hover {
+  background: #1d4ed8;
+}
+
+.dismiss-btn {
+  background: #6b7280;
+  color: #ffffff;
+}
+
+.dismiss-btn:hover {
+  background: #4b5563;
+}
+
+.ban-info {
+  margin-top: 10px;
+  padding: 10px;
+  background: #dc2626;
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 0.85em;
+}
+
+/* Section Salles */
+.rooms-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.create-room-btn {
+  background: #059669;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.create-room-btn:hover {
+  background: #047857;
+}
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.room-card {
+  background: #333;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #444;
+  transition: all 0.3s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.room-info h3 {
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+}
+
+.room-info p {
+  color: #ccc;
+  margin: 0 0 15px 0;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.room-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.room-type {
+  background: #2563eb;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.room-members {
+  color: #ccc;
+  font-size: 0.85em;
+}
+
+.room-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Modal de création de salle */
+.create-room-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #2a2a2a;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h3 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  background: #333;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.submit-btn {
+  background: #059669;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #047857;
+}
+
+.cancel-btn {
+  background: #6b7280;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background: #4b5563;
+}
+
+/* Section Signalements */
+.reports-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.report-card {
+  background: #333;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #444;
+  transition: all 0.3s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.report-info h4 {
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  font-size: 1.1em;
+}
+
+.report-info p {
+  color: #ccc;
+  margin: 0 0 5px 0;
+  font-size: 0.9em;
+}
+
+.report-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.no-reports {
+  text-align: center;
+  color: #ccc;
+  font-style: italic;
+  padding: 40px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .admin-header, .admin-content {
+    padding: 16px;
+  }
+  .admin-header h1 {
+    font-size: 1.5em;
+  }
+  .admin-stats {
+    gap: 12px;
+  }
+  .users-grid, .rooms-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-dashboard {
+    padding: 6px;
+  }
+  .admin-header, .admin-content {
+    padding: 8px;
+    border-radius: 6px;
+  }
+  .admin-header h1 {
+    font-size: 1.1em;
+  }
+  .admin-stats {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .stat-item {
+    min-width: 80px;
+    padding: 10px;
+    font-size: 0.9em;
+  }
+  .admin-tabs {
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px;
+  }
+  .tab-button {
+    font-size: 0.9em;
+    padding: 8px 10px;
+    max-width: 100%;
+  }
+  .users-grid, .rooms-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .user-card, .room-card {
+    padding: 10px;
+    border-radius: 6px;
+  }
+  .user-avatar {
+    width: 36px;
+    height: 36px;
+  }
+  .user-details h3 {
+    font-size: 1em;
+  }
+  .user-details p {
+    font-size: 0.8em;
+  }
+  .user-actions {
+    gap: 4px;
+  }
+} 

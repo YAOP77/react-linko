@@ -1,0 +1,47 @@
+.chat-page {
+  display: flex;
+  height: 100vh;
+  background-color: #18191a;
+}
+
+.chat-welcome-screen {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 2rem;
+  background-color: #161718 !important;
+}
+
+.welcome-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.welcome-content p {
+  font-size: 1.1rem;
+  color: #b0b3b8;
+  margin-bottom: 2rem;
+}
+
+.welcome-content button {
+  background-color: #0095FF;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.welcome-content button:hover {
+  background-color: #007fdb;
+  transform: scale(1.05);
+} 

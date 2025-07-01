@@ -1,0 +1,106 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 160px);
+    padding: 20px;
+    padding-bottom: 100px;
+    background-color: #1a1a1a; /* Dark background */
+}
+
+.login-form {
+    background: #2a2a2a; /* Darker form background */
+    padding: 30px;
+    border-radius: 8px; /* Slightly more rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+    width: 100%;
+    max-width: 450px;
+}
+
+.login-form h2 {
+    color: #f0f0f0; /* Lighter text color */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ccc; /* Lighter label color */
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444; /* Darker border for inputs */
+    background-color: #333; /* Darker input background */
+    color: #f0f0f0; /* Lighter input text */
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #007bff; /* Blue focus border */
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.login-form a {
+    color: #FF3F3F; /* Red link for forgot password/signup */
+    text-decoration: none;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+}
+
+.login-form p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #aaa; /* Lighter paragraph text */
+}
+
+.password-input-wrapper {
+    position: relative;
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 60%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888; /* Color for the eye icon */
+}
+
+.btn-blue {
+    background-color: #007bff !important;
+    color: #fff !important;
+    border: none;
+}
+
+.btn-blue:hover {
+    background-color: #0056b3 !important;
+} 
