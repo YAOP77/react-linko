@@ -70,7 +70,6 @@ const UserSettingsPanel = ({ onClose, onSave }) => {
       // Upload de l'avatar via le nouvel endpoint spécifique
       const response = await axios.post(`${API_URL}/users/${userId}/avatar`, formData, {
         headers: { 
-          'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${token}`
         }
       });
