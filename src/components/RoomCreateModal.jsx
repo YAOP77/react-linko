@@ -14,7 +14,7 @@ const RoomCreateModal = ({ isVisible, onClose, onCreated }) => {
     setLoading(true);
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch(`${API_URL}/rooms/create`, {
+      const res = await fetch(`${API_URL}/rooms`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
