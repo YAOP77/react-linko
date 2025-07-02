@@ -10,14 +10,12 @@ export const getAvatarUrl = (avatar) => {
   if (!avatar) {
     return photoDefault;
   }
-  
   // Si c'est déjà une URL complète, la retourner
   if (avatar.startsWith('http')) {
     return avatar;
   }
-  
-  // Sinon, construire l'URL complète
-  return `${API_URL}/uploads/${avatar}`;
+  // Corrige l'URL pour enlever /api si présent
+  return `${API_URL.replace(/\/api$/, '')}/uploads/${avatar}`;
 };
 
 /**
@@ -27,4 +25,4 @@ export const getAvatarUrl = (avatar) => {
 export const handleAvatarError = (e) => {
   e.target.onerror = null;
   e.target.src = photoDefault;
-}; 
+};
