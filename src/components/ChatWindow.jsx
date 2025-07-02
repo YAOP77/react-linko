@@ -399,9 +399,9 @@ const ChatWindow = ({ user, messages, onSendMessage, onClose, onShowUserProfile,
       const res = await axios.post(`${API_URL}/chatroom/upload`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
-      // Envoi du message media via socket pour temps réel
       const msg = res.data;
       socket.emit('sendMessage', {
+        _id: msg._id, // AJOUTE CETTE LIGNE
         from: msg.from,
         to: msg.to,
         message: msg.message,
