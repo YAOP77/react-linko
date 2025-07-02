@@ -550,7 +550,7 @@ const AdminDashboard = () => {
                       {room.members && room.members.slice(0, 5).map((m, idx) => (
                         <img
                           key={m._id || m}
-                          src={m.avatar ? `http://localhost:5000/uploads/${m.avatar}` : defaultAvatar}
+                          src={m.avatar ? `${API_URL}uploads/${m.avatar}` : defaultAvatar}
                           alt={m.username || ''}
                           style={{
                             width: 32,

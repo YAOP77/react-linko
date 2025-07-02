@@ -1,4 +1,5 @@
 import photoDefault from '../assets/images/default-avatar-icon-of-social-media-user-vector.jpg';
+const API_URL = process.env.REACT_APP_API_URL;
 
 /**
  * Génère l'URL complète pour un avatar utilisateur
@@ -16,7 +17,7 @@ export const getAvatarUrl = (avatar) => {
   }
   
   // Sinon, construire l'URL complète
-  return `http://localhost:5000/uploads/${avatar}`;
+  return `${API_URL}/uploads/${avatar}`;
 };
 
 /**

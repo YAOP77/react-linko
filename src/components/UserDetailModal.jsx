@@ -1,6 +1,8 @@
 import React from 'react';
 import './UserCard.css';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const UserDetailModal = ({ user, onClose }) => {
   if (!user) return null;
   const defaultAvatar = '/default-avatar.png';
@@ -10,7 +12,7 @@ const UserDetailModal = ({ user, onClose }) => {
         <button className="user-detail-close" onClick={onClose}>×</button>
         <div className="user-detail-header">
           <div className="user-avatar-modern" style={{width:90, height:90}}>
-            <img src={user.avatar ? `http://localhost:5000/uploads/${user.avatar}` : defaultAvatar} alt={user.username} onError={e => { e.target.onerror = null; e.target.src = defaultAvatar; }} />
+            <img src={user.avatar ? `${API_URL}/uploads/${user.avatar}` : defaultAvatar} alt={user.username} onError={e => { e.target.onerror = null; e.target.src = defaultAvatar; }} />
           </div>
           <div className="user-detail-info">
             <div className="user-card-title-row">

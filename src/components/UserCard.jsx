@@ -2,6 +2,8 @@ import React from 'react';
 import './UserCard.css';
 import defaultAvatar from '../assets/images/default-avatar-icon-of-social-media-user-vector.jpg';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const UserCard = ({ user, onClick, onBan, onUnban, onDelete, onPromote, currentAdminEmail }) => {
   // Statut : vert si online, rouge sinon
   const statusDot = (
@@ -16,7 +18,7 @@ const UserCard = ({ user, onClick, onBan, onUnban, onDelete, onPromote, currentA
     <div className="user-card-modern" onClick={onClick}>
       <div className="user-card-header">
         <div className="user-avatar-modern">
-          <img src={user.avatar ? `http://localhost:5000/uploads/${user.avatar}` : defaultAvatar} alt={user.username} onError={e => { e.target.onerror = null; e.target.src = defaultAvatar; }} />
+          <img src={user.avatar ? `${API_URL}/uploads/${user.avatar}` : defaultAvatar} alt={user.username} onError={e => { e.target.onerror = null; e.target.src = defaultAvatar; }} />
         </div>
         <div className="user-card-info">
           <div className="user-card-title-row">
