@@ -464,14 +464,22 @@ const ChatWindow = ({ user, messages, onSendMessage, onClose, onShowUserProfile,
     }
   };
 
-  // Combiner les messages du parent et les messages locaux SANS doublons
-  const allMessagesRaw = [...(messages || []), ...(localMessages[user._id] || [])];
-  // Supprimer les doublons (par _id si dispo, sinon timestamp, text, type)
-  const allMessages = allMessagesRaw.filter((msg, idx, arr) =>
-    msg._id
-      ? arr.findIndex(m => m._id === msg._id) === idx
-      : arr.findIndex(m => m.timestamp === msg.timestamp && m.text === msg.text && m.type === msg.type) === idx
-  );
+  // Fusionne sans doublons par _id (priorité à localMessages)
+  const history = messages || [];
+  const local = localMessages[user._id] || [];
+  const allMessagesMap = new Map();
+
+  // Ajoute d'abord l'historique
+  for (const msg of history) {
+    if (msg._id) allMessagesMap.set(msg._id, msg);
+    else allMessagesMap.set(msg.timestamp + msg.text + msg.type, msg);
+  }
+  // Ajoute/écrase avec les messages locaux (plus récents ou modifiés)
+  for (const msg of local) {
+    if (msg._id) allMessagesMap.set(msg._id, msg);
+    else allMessagesMap.set(msg.timestamp + msg.text + msg.type, msg);
+  }
+  const allMessages = Array.from(allMessagesMap.values());
 
   // Extraction des médias et fichiers
   const medias = allMessages.filter(
