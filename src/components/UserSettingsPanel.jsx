@@ -79,6 +79,7 @@ const UserSettingsPanel = ({ onClose, onSave }) => {
       alert('Photo de profil mise à jour avec succès !');
     } catch (error) {
       console.error('Erreur lors du changement d\'avatar:', error);
+      console.error("Erreur lors du changement d'avatar:", error.response?.data);
       alert('Erreur lors du changement de photo de profil');
     } finally {
       setSaving(false);
