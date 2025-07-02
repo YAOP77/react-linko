@@ -654,4 +654,27 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard; 
+function AdminDashboard() {
+  const [admins, setAdmins] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${API_URL}/users/list-admins`)
+      .then(res => setAdmins(res.data))
+      .catch(err => console.error('Erreur lors de la récupération des admins :', err));
+  }, []);
+
+  return (
+    <div>
+      <h2>Liste des utilisateurs (admin et non-admin)</h2>
+      <ul>
+        {admins.map(user => (
+          <li key={user._id}>
+            {user.username} ({user.email}) - Admin: {user.isAdmin ? "Oui" : "Non"}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default AdminDashboard;
