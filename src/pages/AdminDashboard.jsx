@@ -11,15 +11,6 @@ const ADMIN_EMAIL = "yaoyaopascal77@gmail.com";
 const API_URL = process.env.REACT_APP_API_URL;
 
 const AdminDashboard = () => {
-
-  const [admins, setAdmins] = useState([]);
-
-  useEffect(() => {
-    axios.get(`${API_URL}/users/list-admins`)
-      .then(res => setAdmins(res.data))
-      .catch(err => console.error('Erreur lors de la récupération des admins :', err));
-  }, []);
-
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('users');
   const [users, setUsers] = useState([]);
@@ -659,20 +650,8 @@ const AdminDashboard = () => {
           </div>
         )}
       </div>
-
-      <div>
-      <h2>Liste des utilisateurs (admin et non-admin)</h2>
-      <ul>
-        {admins.map(user => (
-          <li key={user._id}>
-            {user.username} ({user.email}) - Admin: {user.isAdmin ? "Oui" : "Non"}
-          </li>
-        ))}
-      </ul>
-    </div>
     </div>
   );
 };
 
-export default AdminDashboard; 
-
+export default AdminDashboard;
